@@ -1,0 +1,94 @@
+﻿
+@model PagedList.IPagedList<Stoyian.Models.Content>
+
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+@{
+    ViewBag.Title = "BlogList";
+    Layout = "~/Views/Shared/_LayoutInner.cshtml";
+}
+
+<!--==============================content================================-->
+<section id="content">
+    <div class="container_24">
+        <div class="grid_16">
+            <h2 class="top-6 p2">Recent Blog Posts</h2>
+            <div class="wrap p6">
+                @foreach (var item in Model)
+                {
+
+                    <div class="wrap block-4">
+
+                        <div class="extra-wrap">
+                          
+                            <p class="top-4 font-13">
+                                @if (item.ImageURL != null && item.ImageURL != "")
+                                {
+                                    <img width="200" height="160" align="right" style="padding: 8px;"
+                                         src="@Html.Raw(item.ImageURL)" alt="">
+                                }
+                                <a href="/Articles/@item.HeadingURL" class="color-1">@item.Heading</a>
+
+                                <br />
+                                <span class="st-subtitle">
+                                    by Stoyian |
+                                    @String.Format("{0:D}", item.LastUpdatedDate)
+                                </span><br />
+                                <span class="gl-text">@Html.Raw(item.Teaser)</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="st-hr-inner"></div>
+                }
+            </div>
+            
+        </div>
+       
+        <div class="grid_8">
+
+
+            <h2 class="top-6 p2">
+                <a href="/Contact/" class="button top-1">Get in touch</a>
+            </h2>
+            <ul class="list-1">
+                <li>Scrum</li>
+                <li> Estimation techniques </li>
+                <li> Kanban </li>
+                <li> Risk & Mitigation </li>
+                <li> Budget & Cost Management </li>
+                <li> Schedule & Staffing Planning </li>
+                <li> Offshore team management </li>
+                <li> Process assessments </li>
+                <li> SEO / Creative content  </li>
+                <li> EMR systems </li>
+                <li> ASP.NET C# </li>
+                <li> SQL Server </li>
+                <li> JSON / Rest </li>
+                <li> JavaScript / jQuery / Ajax </li>
+                <li> CSS/Bootstrap </li>
+                <li> Business Intelligence </li>
+                <li> SSAS/SSIS/SSRS </li>
+                <li> Cloud / Amazon AWS </li>
+                <li> ColdFusion </li>
+                <li> Photoshop / Illustrator / Dreamweaver </li>
+                <li> Cloud / Amazon AWS </li>
+
+
+            </ul>
+
+        </div>
+       
+
+
+        <div class="grid_24 line pad-3"> Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("BusinessNewsList",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))</div>
+      
+        <div class="clear"></div>
+    </div>
+</section>
+

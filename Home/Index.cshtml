@@ -1,0 +1,130 @@
+﻿@model  IEnumerable<Stoyian.Models.Content>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+ <!--==============================content================================-->
+    <section id="content" >
+     <div id="tophead" class="width-100 header-background">
+        <div class="container_24 width-1024"  >
+            <br /><br /><div class="wrapper">
+                <div class="grid_10">
+                    <img src="images/rover2.png" id="image-head" class="heading-padding" alt="" align="left">
+                    <div class="banner"><p><a href="#" >Did you know that adding more people, can actually slow down your project?</a></p></div>
+                    @*<div class="flexslider">
+                       <ul class="slides">
+                         
+                          <li><img src="/images/slider1.jpg" alt=""><div class="banner"><p>Are you lost or<br /> really close to the top?</p></div></li>
+                            @*<li><img src="images/slider-2.jpg" alt=""><div class="banner"><p>Honesty. Integrity. Competence.</p><p>Clients choose <strong>us</strong></p></div></li>
+    <li><img src="images/slider-3.jpg" alt=""><div class="banner"><p>Creative solutions. Proven expertise.</p><p>Succeed with <strong>us</strong>!</p></div></li>
+    <li><img src="images/slider-4.jpg" alt=""><div class="banner"><p>Give <strong>us</strong> a chance </p><p>and <strong>we</strong> will prove our efficiency!</p></div></li>
+                        </ul>
+                    </div>*@
+                </div>
+                <div class="grid_14">
+                    <p class="heading-title">Project Mgmt and <br /> Software development
+                       </p>
+                    <p style="margin-top:-10px;padding-left:140px;margin-bottom:20px;">
+                        <a href="/Contact/" class="button top-1">Get in touch</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="container_24">
+            <div class="box-row wrapper">
+                <div class="grid_6">
+                    <div class="box">
+
+                        <a href="/services/" class="box-1"><strong>Project Mgt</strong></a>
+                    </div>
+                </div>
+                <div class="grid_6">
+                    <div class="box">
+                        <a href="/services/" class="box-2"><strong>Development</strong></a>
+                    </div>
+                </div>
+                <div class="grid_6">
+                    <div class="box">
+                        <a href="/services/" class="box-3"><strong>Process</strong></a>
+                    </div>
+                </div>
+                <div class="grid_6">
+                    <div class="box">
+                        <a href="/services/" class="box-4"><strong>Outsource</strong></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container_24">
+            @*<div class="grid_6">
+                <h3 class="top-1 p2">Why Choose Us?</h3>
+                <p>
+                    Natoqe penatus partur montes diculus duim fusegin alesda morb nuncodio.
+                    Gravida curs necluctus tristique auctor ultricies  malesuada.
+                </p>
+                <p>Donec situmamet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. </p>
+                <a href="#" class="button top-2">more</a>
+            </div>
+            <div class="grid_6">
+                <h3 class="top-1 p2">What We Offer</h3>
+                <p>
+                    Natoqe penatus partur montes diculus duim fusegin alesda morb nuncodio.
+                    Gravida curs necluctus tristique auctor ultricies acmsan malesuada.
+                </p>
+                <p>Donec situmamet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. </p>
+                <a href="#" class="button top-2">more</a>
+            </div>
+            <div class="grid_6">
+                <h3 class="top-1 p2">Our Team</h3>
+                <p>
+                    Natoqe penatus partur montes diculus duim fusegin alesda morb nuncodio.
+                    Gravida curs necluctus tristique auctor accumsan malesuada.
+                </p>
+                <p>Donec situmamet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. </p>
+                <a href="#" class="button top-2">more</a>
+            </div>
+            <div class="grid_6">
+                <h3 class="top-1 p2">Featured Services</h3>
+                <p>
+                    Natoqe penatus partur montes diculus duim fusegin alesda morb nuncodio.
+                    Gravida curs necluctus tristique auctor ultricies acmsan malesuada.
+                </p>
+                <p>Donec situmamet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. </p>
+                <a href="#" class="button top-2">more</a>
+            </div>*@
+            <div class="pad-4 line"></div>
+            <div class="grid_24"></div>
+            <div class="grid_11">
+                <h2 class="p3">How I help</h2>
+               
+                
+                <p class="p3 top-3">@*<img src="images/self2sm.png" style="padding:7px;" alt="" align="left">*@
+                    I help organizations make the most of their existing assets. Looking through your current process and team structure to help you optimize and achieve faster release cycles with better quality and product satisfaction.  
+                </p>
+                <p class="p3">
+                    Let me run a project for you and mentor your team at the same time. I excel at design and delivery estimation, quality measures and risk planning and would love to share the knowledge. I'm very passionate about Project and Organization management and regularly write about it on my <a href="/blog/">blog</a>. 
+                </p>
+                <p class="p3">An expert full stack software engineer, who has delivered solutions for companies like Coca Cola, Harvard University and BMW, I'll work with you on your next idea and can help you with all aspects of software development from front end design to back end database structure optimization and efficiency.  </p>
+            </div>
+            <div class="grid_12 prefix_1">
+                <h2 class="p4">Recent Posts</h2>
+
+                @foreach (var item in Model)
+                {
+                    <div class="wrap date">
+                        <div class="date-text">@String.Format("{0:MM/dd}", item.LastUpdatedDate)</div>
+                        <div class="extra-wrap">
+                            <a href="/Articles/@item.HeadingURL" class="color-1">@Html.DisplayTextFor(model => item.Heading)</a>
+                            <p class="font-13 top-4">@Html.Raw(item.Teaser)</p>
+                        </div>
+                    </div>
+                }
+                    <a href="/blog/" class="button top-2">more</a>
+                    </div>
+            <div class="grid_24 banners">
+                <a href="#" class="banner-1"></a><a href="#" class="banner-2"></a><a href="#" class="banner-3"></a><a href="#" class="banner-4"></a><a href="#" class="banner-5 last"></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </section>

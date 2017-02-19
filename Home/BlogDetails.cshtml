@@ -1,0 +1,85 @@
+﻿@model Stoyian.Models.Content
+
+@{
+    ViewBag.Title = "BlogDetails";
+    Layout = "~/Views/Shared/_LayoutInner.cshtml";
+}
+
+
+
+<!--==============================content================================-->
+<section id="content">
+    <div class="container_24">
+        <div class="grid_15">
+            <h2 class="top-blog">@Model.Heading</h2>
+            <span class="st-subtitle">
+                by Stoyian |
+                @String.Format("{0:D}", Model.LastUpdatedDate)
+            </span><br />
+            <div class="wrap p6">
+              
+
+                  
+                        <div class="extra-wrap">
+
+                            <p class="top-5 font-13">
+                             @if (Model.ImageURL != null && Model.ImageURL != "")
+            { <img align="left" class="row hidden-sm hidden-xs" style="padding: 0px;margin:15px 0 10px 12px"
+                   src="@Html.Raw(Model.ImageURL)" alt="">
+
+                             }
+                               
+                               
+                                <span class="gl-text">@Html.Raw(Model.Text)</span>
+                            </p>
+                        </div>
+                  
+
+                    <div class="st-hr-inner"></div>
+             
+            </div>
+
+        </div>
+
+        <div class="grid_8 prefix_1">
+
+            <h2 class="top-6 p2">
+    <a href="/Contact/" class="button top-1">Get in touch </a>
+</h2>
+            <ul class="list-1">
+                <li> Scrum </li>
+                <li> Estimation techniques </li>
+                <li> Kanban </li>
+                <li> Risk & Mitigation </li>
+                <li> Budget & Cost Management </li>
+                <li> Schedule & Staffing Planning </li>
+                <li> Offshore team management </li>
+                <li> Process assessments </li>
+                <li> SEO / Creative content  </li>
+                <li> EMR systems </li>
+                <li> ASP.NET C# </li>
+                <li> SQL Server </li>
+                <li> JSON / Rest </li>
+                <li> JavaScript / jQuery / Ajax </li>
+                <li> CSS/Bootstrap </li>
+                <li> Business Intelligence </li>
+                <li> SSAS/SSIS/SSRS </li>
+                <li> Cloud / Amazon AWS </li>
+                <li> ColdFusion </li>
+                <li> Photoshop / Illustrator / Dreamweaver </li>
+                <li> Cloud / Amazon AWS </li>
+
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="grid_24 line pad-3">
+           
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</section>
